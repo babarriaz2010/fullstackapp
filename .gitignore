@@ -1,7 +1,15 @@
 node_modules/
 dist/
 .vercel/
+# Backend credentials and local service configuration. Never commit these.
 .env
+.env.local
 .env.*
+# Keep the template with placeholder values available to contributors.
 !.env.example
 *.log
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.neon

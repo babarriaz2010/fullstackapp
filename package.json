@@ -1,12 +1,20 @@
 {
   "name": "my-fullstack-app",
   "private": true,
-  "workspaces": ["client", "server"],
-  "engines": { "node": "24.x" },
+  "workspaces": [
+    "client"
+  ],
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "npm run dev --workspace=client",
-    "dev:server": "npm run dev --workspace=server",
-    "build": "npm run typecheck --workspace=server && npm run build --workspace=client",
+    "dev:server": "python -m uvicorn server.main:app --reload --host 127.0.0.1 --port 8000",
+    "build": "npm run build --workspace=client",
     "lint": "npm run lint --workspace=client"
+  },
+  "dependencies": {
+    "@neon/config": "^1.9.6",
+    "@neon/env": "^1.6.6"
   }
 }
