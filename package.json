@@ -1,0 +1,12 @@
+{
+  "name": "my-fullstack-app",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "dev": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build": "npm run typecheck --workspace=server && npm run build --workspace=client",
+    "lint": "npm run lint --workspace=client"
+  }
+}
